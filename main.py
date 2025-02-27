@@ -25,7 +25,7 @@ def process_json_file(file_path, backup=False):
 
     if backup:
         os.makedirs('backup', exist_ok=True)
-        backup_path = os.path.join('backup', os.path.basename(file_path) + ".backup")
+        backup_path = os.path.join('backup', os.path.basename(file_path))
         os.rename(file_path, backup_path)
 
     os.makedirs('transformed', exist_ok=True)
