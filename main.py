@@ -9,7 +9,7 @@ DATE_PATTERN = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}')
 
 def convert_date_to_timestamp(date_str):
     dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
-    return int(dt.timestamp())
+    return int(dt.timestamp() * 1000)
 
 def process_json_file(file_path, backup=False):
     with open(file_path, 'r', encoding='utf-8') as f:
